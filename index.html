@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#008448" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="splash.png" />
+    <title>CHECK LIST DO SERVIÇO DIÁRIO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-bar">
+        <div class="site-header-inner">
+          <img src="banner.png" alt="PMSC · Checklist do Serviço Diário" class="brand-banner" />
+          <div class="brand-copy">
+            <p class="brand-org">Polícia Militar Rodoviária</p>
+            <p class="brand-title">CHECK LIST DO SERVIÇO DIÁRIO</p>
+          </div>
+        </div>
+      </div>
+      <div class="site-header-stripe" aria-hidden="true"></div>
+    </header>
+    <div id="app" class="app"></div>
+
+    <div id="splash" class="splash" aria-hidden="true">
+      <img src="splash.png" alt="Carregando" class="splash-img" />
+    </div>
+
+    <script>
+      // Esconde a splash assim que o DOM e o app estiverem prontos.
+      function hideSplash() {
+        var s = document.getElementById("splash");
+        if (s) s.classList.add("splash--hidden");
+      }
+      window.addEventListener("DOMContentLoaded", function () {
+        setTimeout(hideSplash, 600);
+      });
+      // Fallback caso o módulo falhe: esconde após 3s.
+      setTimeout(hideSplash, 3000);
+    </script>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
